@@ -34,7 +34,7 @@ public class DriveTrain extends Subsystem {
     private final TalonSRX rearRightDrive = RobotMap.driveTrainRearRightDrive;
     private final TalonSRX frontLeftDrive = RobotMap.driveTrainFrontLeftDrive;
     private final TalonSRX frontRightDrive = RobotMap.driveTrainFrontRightDrive;
-    private RobotDrive drive;
+    public static RobotDrive drive;       
     
     public DriveTrain() {
     	super();
