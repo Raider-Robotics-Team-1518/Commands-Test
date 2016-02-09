@@ -57,6 +57,7 @@ public class OI {
     public JoystickButton a;
     public JoystickButton lb;  // JDH - remapped buttons 2/4/16
     public JoystickButton rb;  // JDH - remapped buttons 2/4/16
+    public JoystickButton encoderTest;
     public JoystickButton wallLineUp;
     public Joystick gamepad;
     public JoystickButton trigger;
@@ -91,7 +92,9 @@ public class OI {
         rb = new JoystickButton(gamepad, 6);  // JDH - remapped buttons 2/4/16
         rb.whileHeld(new Acquire());
         wallLineUp = new JoystickButton(leftJoystick, 10);
-        wallLineUp.whenPressed(new Target());
+       // wallLineUp.whenPressed(new Target());
+        encoderTest = new JoystickButton(leftJoystick, 11);
+        encoderTest.whenPressed(new Forward());
         
 
 

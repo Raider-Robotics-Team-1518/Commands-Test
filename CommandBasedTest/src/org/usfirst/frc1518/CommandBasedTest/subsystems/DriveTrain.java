@@ -16,9 +16,11 @@ import org.usfirst.frc1518.CommandBasedTest.commands.*;
 
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.TalonSRX;
-
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.usfirst.frc1518.CommandBasedTest.subsystems.Rangefinder;
+
+import edu.wpi.first.wpilibj.TalonSRX;
+import edu.wpi.first.wpilibj.Encoder;
 
 
 /**
@@ -35,14 +37,17 @@ public class DriveTrain extends Subsystem {
     public final static TalonSRX rearRightDrive = RobotMap.driveTrainRearRightDrive;
     public final static TalonSRX frontLeftDrive = RobotMap.driveTrainFrontLeftDrive;
     public final static TalonSRX frontRightDrive = RobotMap.driveTrainFrontRightDrive;
-    public static RobotDrive drive;  
-    public final static Rangefinder leftSonic = RobotMap.driveTrainLeftSonic;
-    public final static Rangefinder rightSonic = RobotMap.driveTrainRightSonic;
+    public static RobotDrive drive;
+    public static Encoder rearLeftEncoder = RobotMap.driveTrainRearLeftEncoder;
+    //public final static Rangefinder leftSonic = RobotMap.driveTrainLeftSonic;
+    //public final static Rangefinder rightSonic = RobotMap.driveTrainRightSonic; 
+   
     
     
     public DriveTrain() {
     	super();
     	drive = new RobotDrive(frontLeftDrive, rearLeftDrive, frontRightDrive, rearRightDrive);
+    	
     	
     	
     }

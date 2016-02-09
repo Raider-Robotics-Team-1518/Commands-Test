@@ -2,8 +2,10 @@ package org.usfirst.frc1518.CommandBasedTest.subsystems;
 
 
 import edu.wpi.first.wpilibj.*;
+import edu.wpi.first.wpilibj.livewindow.LiveWindowSendable;
+import edu.wpi.first.wpilibj.tables.ITable;
 
-public class Rangefinder extends SensorBase {
+public class Rangefinder extends SensorBase implements LiveWindowSendable {
 
     private final double IN_TO_CM_CONVERSION = 2.54;
     private boolean use_units;    //Are we using units or just returning voltage?
@@ -85,4 +87,34 @@ public class Rangefinder extends SensorBase {
         range *= IN_TO_CM_CONVERSION;
         return range;
     }
+	@Override
+	public void initTable(ITable subtable) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public ITable getTable() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String getSmartDashboardType() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void updateTable() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void startLiveWindowMode() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void stopLiveWindowMode() {
+		// TODO Auto-generated method stub
+		
+	}
 }

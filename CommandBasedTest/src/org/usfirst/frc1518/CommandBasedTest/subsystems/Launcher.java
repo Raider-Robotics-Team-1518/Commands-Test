@@ -14,6 +14,7 @@ package org.usfirst.frc1518.CommandBasedTest.subsystems;
 import org.usfirst.frc1518.CommandBasedTest.RobotMap;
 import org.usfirst.frc1518.CommandBasedTest.commands.*;
 import edu.wpi.first.wpilibj.TalonSRX;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Servo;
 
 import edu.wpi.first.wpilibj.command.Subsystem;

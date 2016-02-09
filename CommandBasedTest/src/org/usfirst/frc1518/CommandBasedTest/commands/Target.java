@@ -5,9 +5,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc1518.CommandBasedTest.Robot;
 import org.usfirst.frc1518.CommandBasedTest.subsystems.DriveTrain;
 
-/**
- *
- */
+
+ 
 public class Target extends Command {
 	public boolean isCompleted = false;
 
@@ -33,7 +32,7 @@ public class Target extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	while(DriveTrain.leftSonic.GetRangeInInches() != DriveTrain.rightSonic.GetRangeInInches()) {
+    	/*while(DriveTrain.leftSonic.GetRangeInInches() != DriveTrain.rightSonic.GetRangeInInches()) {
     		if(DriveTrain.leftSonic.GetRangeInInches() < DriveTrain.rightSonic.GetRangeInInches()) {
     			DriveTrain.frontRightDrive.set(0.5);
     			DriveTrain.rearRightDrive.set(0.5);
@@ -49,10 +48,10 @@ public class Target extends Command {
     		DriveTrain.frontRightDrive.set(0);
 			DriveTrain.rearRightDrive.set(0);
 			DriveTrain.frontLeftDrive.set(0);
-			DriveTrain.rearLeftDrive.set(0);
+			DriveTrain.rearLeftDrive.set(0);*/
 			isCompleted = true;
     	}
-    	}
+    	
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
