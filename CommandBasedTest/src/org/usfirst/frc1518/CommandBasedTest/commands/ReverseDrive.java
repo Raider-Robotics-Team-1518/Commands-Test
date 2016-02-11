@@ -22,7 +22,7 @@ import org.usfirst.frc1518.CommandBasedTest.subsystems.DriveTrain;
  *
  */
 public class ReverseDrive extends Command {
-	boolean isReversed = false;
+	boolean isReversed = false; // DriveTrain.drive.getInvertedMotor(RobotDrive.MotorType.kRearLeft);
 	boolean isCompleted;
 
 
