@@ -35,7 +35,7 @@ public class AutoMode1 extends Command {
 		}
 		Robot.driveTrain.drive(0, 0);
 		timeout = 0;
-		while (timeout <250000) {
+		while (timeout < 250000) {
 			Robot.driveTrain.drive(-.5, .5);
 			timeout = timeout + 1;
 		}

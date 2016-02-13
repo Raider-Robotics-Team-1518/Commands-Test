@@ -22,7 +22,7 @@ import org.usfirst.frc1518.CommandBasedTest.subsystems.DriveTrain;
  *
  */
 public class ReverseDrive extends Command {
-	boolean isReversed = false; // DriveTrain.drive.getInvertedMotor(RobotDrive.MotorType.kRearLeft);
+	   // DriveTrain.drive.getInvertedMotor(RobotDrive.MotorType.kRearLeft);
 	boolean isCompleted;
 
 
@@ -48,13 +48,13 @@ public class ReverseDrive extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if (isReversed == true) {
+    	if (Robot.isReversed == true) {
     		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, false);
     		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kRearRight, false);
     		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, false);
     		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, false);
     		DriveTrain.drive.tankDrive(Robot.oi.rightJoystick.getY(), Robot.oi.leftJoystick.getY());
-    		isReversed = false;
+    		Robot.isReversed = false;
     		isCompleted = true;
     		
     	}
@@ -64,7 +64,7 @@ public class ReverseDrive extends Command {
     		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
     		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true); 
     		DriveTrain.drive.tankDrive(Robot.oi.leftJoystick.getY(), Robot.oi.rightJoystick.getY());
-    		isReversed = true;
+    		Robot.isReversed = true;
     		isCompleted = true;
     		}
     }

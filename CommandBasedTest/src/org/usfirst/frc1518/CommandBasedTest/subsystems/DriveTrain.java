@@ -39,8 +39,7 @@ public class DriveTrain extends Subsystem {
     public final static TalonSRX frontRightDrive = RobotMap.driveTrainFrontRightDrive;
     public static RobotDrive drive;
     public static Encoder rearLeftEncoder = RobotMap.driveTrainRearLeftEncoder;
-    //public final static Rangefinder leftSonic = RobotMap.driveTrainLeftSonic;
-    //public final static Rangefinder rightSonic = RobotMap.driveTrainRightSonic; 
+   
    
     
     

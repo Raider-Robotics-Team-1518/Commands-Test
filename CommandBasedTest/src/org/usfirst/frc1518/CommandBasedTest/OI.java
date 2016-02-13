@@ -86,7 +86,7 @@ public class OI {
          right3 = new JoystickButton(rightJoystick, 3);
          right3.whileHeld(new LiftFangs());
          left3 = new JoystickButton(leftJoystick, 3);
-         left3.whenPressed(new SwitchCam());
+         left3.whileHeld(new RangeCompare());
          
          
         gamepad = new Joystick(2);

@@ -1,11 +1,11 @@
 package org.usfirst.frc1518.CommandBasedTest.commands;
 
 import org.usfirst.frc1518.CommandBasedTest.Robot;
-import org.usfirst.frc1518.CommandBasedTest.subsystems.Optics;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class SwitchCam extends Command {
+public class AutoMode2 extends Command {
+	boolean taskComplete = false;
 
 	@Override
 	protected void initialize() {
@@ -15,13 +15,25 @@ public class SwitchCam extends Command {
 
 	@Override
 	protected void execute() {
+		int timeout = 0;
+		
+		while(timeout < 250000) {
+			Robot.driveTrain.drive(-0.5, -0.5);
+			timeout = timeout + 1;
+		}
+		Robot.driveTrain.drive(0, 0);
+		timeout = 0;
+		while(Robot.buttChasm != 0) {
+			new RangeCompare();
+		}
+		Robot.driveTrain.drive(0, 0);
+		while(Robot.buttChasm == 0) {
+			
+		}
+		
+		
 		// TODO Auto-generated method stub
-		if (Robot.camSelect2) {
-			Robot.camSelect2 = false;
-		}
-		else {
-		Robot.camSelect2 = true;
-		}
+		
 	}
 
 	@Override
