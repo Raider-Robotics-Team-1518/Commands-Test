@@ -16,7 +16,7 @@ public class SwitchCam extends Command {
 	@Override
 	protected void execute() {
 		// TODO Auto-generated method stub
-		if (Robot.camSelect2) {
+		if (Robot.camSelect2 == true) {
 			Robot.camSelect2 = false;
 		}
 		else {
