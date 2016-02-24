@@ -29,12 +29,12 @@ public class AutoMode1 extends Command {
 	protected void execute() {
 		int timeout = 0;
 		
-		while (timeout < 250000) {
-			Robot.driveTrain.drive(-.5, -.5);
+		while (timeout < 300000) {
+			Robot.driveTrain.drive(-0.7, -0.7);
 			timeout = timeout + 1;
 		}
 		Robot.driveTrain.drive(0, 0);
-		timeout = 0;
+		/*timeout = 0;
 		while (timeout < 250000) {
 			Robot.driveTrain.drive(-.5, .5);
 			timeout = timeout + 1;
@@ -45,7 +45,7 @@ public class AutoMode1 extends Command {
 			Robot.driveTrain.drive(-.5, -.5);
 			timeout = timeout + 1;
 		}
-		Robot.driveTrain.drive(0, 0);
+		Robot.driveTrain.drive(0, 0);*/
 		
 		taskComplete = true;
 	}

@@ -31,9 +31,9 @@ public class Optics extends Subsystem {
 		RobotMap.axisCam1.getImage(frame); 
 	}
 	else {
-		RobotMap.webCam1.getImage(frame);
+		RobotMap.axisCam1.getImage(frame);
 	}
-	NIVision.imaqOverlayText(frame, origin, targetDistance, textColor, null, "");
+	//NIVision.imaqOverlayText(frame, origin, targetDistance, textColor, null, "");
 	CameraServer.getInstance().setImage(frame);
 	}
 

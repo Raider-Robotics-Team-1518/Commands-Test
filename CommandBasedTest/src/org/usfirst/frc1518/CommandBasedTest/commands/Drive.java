@@ -15,7 +15,9 @@ import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.vision.AxisCamera;
 
+import org.usfirst.frc1518.CommandBasedTest.OI;
 import org.usfirst.frc1518.CommandBasedTest.Robot;
+import org.usfirst.frc1518.CommandBasedTest.subsystems.DriveTrain;
 
 import com.ni.vision.NIVision.Image;
 
@@ -58,8 +60,12 @@ public class Drive extends Command {
     	//}
         //cam1.getImage(frame);
         //CameraServer.getInstance().setImage(frame);
-
-    	Robot.driveTrain.drive(Robot.oi.getLeftJoystick().getY(), Robot.oi.getRightJoystick().getY());
+    	if(Robot.isReversed == false) {
+        	DriveTrain.drive.tankDrive(OI.leftJoystick, OI.rightJoystick);
+        	}
+        else if(Robot.isReversed == true) {
+        		DriveTrain.drive.tankDrive(OI.rightJoystick, OI.leftJoystick);
+        	}
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -22,12 +22,14 @@ public class Rangefinder extends SensorBase implements LiveWindowSendable {
 		min_voltage = .5;
 		voltage_range = 5.0 - min_voltage;
 		min_distance = 3.0;
-		distance_range = 60.0 - min_distance;
+		distance_range = 120.0 - min_distance;
     }
     //constructor
     public Rangefinder(int _channel, boolean _use_units, double _min_voltage,
             double _max_voltage, double _min_distance, double _max_distance) {
         channel = new AnalogInput(_channel);
+        channel.setAverageBits(2);
+        
         //only use unit-specific variables if we're using units
         if (_use_units) {
             use_units = true;
@@ -53,7 +55,7 @@ public class Rangefinder extends SensorBase implements LiveWindowSendable {
         if (!use_units) {
             return -1.0;
         }
-        range = channel.getVoltage();
+        range = channel.getAverageVoltage(); 
         if (range < min_voltage) {
             return -2.0;
         }

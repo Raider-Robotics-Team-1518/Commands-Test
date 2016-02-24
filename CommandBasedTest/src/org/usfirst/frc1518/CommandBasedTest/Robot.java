@@ -30,7 +30,7 @@ public class Robot extends IterativeRobot {
 	Command autoComm1;
 	Command autoComm2;
 	Command autoComm3;
-	public static boolean isReversed = false;
+	public static boolean isReversed;
 	public static boolean camSelect2 = false;
 	public static double leftButtCheek;
 	public static double rightButtCheek;
@@ -61,7 +61,8 @@ public class Robot extends IterativeRobot {
 			}
 		double servoAngle2 = Fangs.leftServo.getAngle();
 		if (servoAngle2 < Fangs.leftHomePosition) {
-			Fangs.leftServo.setAngle(Fangs.leftHomePosition);	
+			Fangs.leftServo.setAngle(Fangs.leftHomePosition);
+			isReversed = false;
 		}
 		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
 		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
@@ -91,11 +92,12 @@ public class Robot extends IterativeRobot {
      * You can use it to reset subsystems before shutting down.
      */
     public void disabledInit(){
-
     }
 
     public void disabledPeriodic() {
         Scheduler.getInstance().run();
+        //DriveTrain.drive.tankDrive(OI.leftJoystick, OI.rightJoystick);
+    	//Robot.isReversed = false;
     }
 
     public void autonomousInit() {

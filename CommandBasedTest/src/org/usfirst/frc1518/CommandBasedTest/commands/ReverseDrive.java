@@ -53,17 +53,17 @@ public class ReverseDrive extends Command {
     		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kRearRight, false);
     		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, false);
     		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, false);
-    		DriveTrain.drive.tankDrive(Robot.oi.rightJoystick.getY(), Robot.oi.leftJoystick.getY());
+    		//DriveTrain.drive.tankDrive(Robot.oi.leftJoystick.getY(), Robot.oi.rightJoystick.getY());
     		Robot.isReversed = false;
     		isCompleted = true;
     		
     	}
-    	else {
+    	else if(Robot.isReversed == false) {
     		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
     		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
     		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
     		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true); 
-    		DriveTrain.drive.tankDrive(Robot.oi.leftJoystick.getY(), Robot.oi.rightJoystick.getY());
+    		//DriveTrain.drive.tankDrive(Robot.oi.rightJoystick.getY(), Robot.oi.leftJoystick.getY());
     		Robot.isReversed = true;
     		isCompleted = true;
     		}
