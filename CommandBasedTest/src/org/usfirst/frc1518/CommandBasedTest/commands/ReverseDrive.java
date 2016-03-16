@@ -11,8 +11,10 @@
 
 package org.usfirst.frc1518.CommandBasedTest.commands;
 
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc1518.CommandBasedTest.OI;
 import org.usfirst.frc1518.CommandBasedTest.Robot;
@@ -49,21 +51,23 @@ public class ReverseDrive extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	if (Robot.isReversed == true) {
-    		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, false);
-    		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kRearRight, false);
-    		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, false);
-    		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, false);
-    		//DriveTrain.drive.tankDrive(Robot.oi.leftJoystick.getY(), Robot.oi.rightJoystick.getY());
+    		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
+    		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+    		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
+    		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
+    		DriveTrain.drive.tankDrive(OI.leftJoystick.getY(), OI.rightJoystick.getY());
+    		SmartDashboard.putBoolean("Is Reversed", false);
     		Robot.isReversed = false;
     		isCompleted = true;
     		
     	}
-    	else if(Robot.isReversed == false) {
-    		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
-    		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
-    		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
-    		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true); 
-    		//DriveTrain.drive.tankDrive(Robot.oi.rightJoystick.getY(), Robot.oi.leftJoystick.getY());
+    	else {
+    		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, false);
+    		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kRearRight, false);
+    		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, false);
+    		DriveTrain.drive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, false); 
+    		DriveTrain.drive.tankDrive(OI.rightJoystick.getY(), OI.leftJoystick.getY());
+    		SmartDashboard.putBoolean("Is Reversed", true);
     		Robot.isReversed = true;
     		isCompleted = true;
     		}

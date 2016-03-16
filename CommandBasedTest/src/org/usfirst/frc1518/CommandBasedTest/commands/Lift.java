@@ -20,10 +20,10 @@ protected void initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 protected void execute() {
-	Lifter.winchMotor.set(-1); //there once was an ugly barnacle. He died. The End
+	Lifter.winchMotor.set(-1);
 } 
-//heLP IM BORED
-//BUILD HURRY IT UP  
+
+ 
 // Make this return true when this Command no longer needs to run execute()
 protected boolean isFinished() {
     return false;
