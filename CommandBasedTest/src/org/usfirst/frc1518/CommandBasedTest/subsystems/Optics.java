@@ -2,6 +2,7 @@ package org.usfirst.frc1518.CommandBasedTest.subsystems;
 
 
 import org.usfirst.frc1518.CommandBasedTest.RobotMap;
+import org.usfirst.frc1518.CommandBasedTest.commands.USBCam;
 import org.usfirst.frc1518.CommandBasedTest.Robot;
 
 
@@ -20,11 +21,12 @@ public class Optics extends Subsystem {
 	public static final Image frame = NIVision.imaqCreateImage(NIVision.ImageType.IMAGE_HSL, 0);
 	public static Point origin;
 	public static RGBValue textColor;
+
 	
 	@Override
 	protected void initDefaultCommand() {
 		// TODO Auto-generated method stub
-		String targetDistance = "Distance: " + Robot.leftButtCheek;
+		/*String targetDistance = "Distance: " + Robot.leftButtCheek;
 		origin = new Point(0,0);
 		textColor = new RGBValue(255,255,255,255);
 	if (Robot.camSelect2 == false) {
@@ -33,8 +35,9 @@ public class Optics extends Subsystem {
 	else {
 		RobotMap.axisCam1.getImage(frame);
 	}
-	//NIVision.imaqOverlayText(frame, origin, targetDistance, textColor, null, "");
-	CameraServer.getInstance().setImage(frame);
+	//NIVision.imaqOverlayText(frame, origin, targetDistance, textColor, null, "");*/
+		setDefaultCommand(new USBCam());
 	}
 
 }
+
