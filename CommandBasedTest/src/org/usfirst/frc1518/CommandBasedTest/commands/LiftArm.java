@@ -19,7 +19,7 @@ public class LiftArm extends Command{
 
 	@Override
 	protected void execute(){
-		Lifter.armMotor.set(.55);
+		Lifter.armMotor.set(.75);
 		// TODO Auto-generated method stub 
 	}  
 

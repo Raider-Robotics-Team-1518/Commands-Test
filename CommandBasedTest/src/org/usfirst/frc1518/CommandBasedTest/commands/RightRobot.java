@@ -15,7 +15,7 @@ public class RightRobot extends Command{
 	@Override
 	protected void execute() {
 		// TODO Auto-generated method stub
-		Launcher.rightMechanism.set(0.75);
+		Launcher.rightMechanism.set(0.25);
 		
 	}
 

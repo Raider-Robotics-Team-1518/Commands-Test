@@ -87,7 +87,7 @@ public class OI {
         trigger = new JoystickButton(leftJoystick, 1);
         trigger.whileHeld(new Acquire());  // JDH - remapped buttons 2/4/16
         rTrigger = new JoystickButton (rightJoystick, 1);
-        rTrigger.whileHeld(new LaunchHigh());
+        rTrigger.whileHeld(new LaunchLow());
         //right3 = new JoystickButton(rightJoystick, 3);
         //right3.whileHeld(new LiftFangs());
         left3 = new JoystickButton(leftJoystick, 3);

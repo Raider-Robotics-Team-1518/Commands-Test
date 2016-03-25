@@ -42,6 +42,7 @@ public class LaunchLow extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Launcher.topWheels.set(1);
     	Launcher.bottomWheels.set(0.65);
     }
 
