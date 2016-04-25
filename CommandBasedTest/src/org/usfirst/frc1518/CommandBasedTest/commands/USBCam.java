@@ -17,8 +17,8 @@ public class USBCam extends Command{
 	@Override
 	protected void execute() {
 		// TODO Auto-generated method stub
-		RobotMap.webCam1.getImage(Optics.frame);
-		CameraServer.getInstance().setImage(Optics.frame);
+		//RobotMap.webCam1.getImage(Optics.frame);
+		//CameraServer.getInstance().setImage(Optics.frame);
 		
 	}
 

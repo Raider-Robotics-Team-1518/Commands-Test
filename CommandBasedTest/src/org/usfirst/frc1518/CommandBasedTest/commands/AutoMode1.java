@@ -38,7 +38,7 @@ public class AutoMode1 extends Command {
 		Robot.isReversed = false;
 		int timeout = 0;
 		
-		while (timeout < 150000) {
+		while (timeout < 300000) {
 			Robot.driveTrain.drive(-0.7, -0.7);
 			timeout = timeout + 1;
 		}
