@@ -85,9 +85,9 @@ public class OI {
         reverse = new JoystickButton(leftJoystick, 8);
         reverse.whenPressed(new ReverseDrive());
         trigger = new JoystickButton(leftJoystick, 1);
-        trigger.whenPressed(new ReverseDrive());  // JDH - remapped buttons 2/4/16
+        trigger.whileHeld(new LiftFangs());  // JDH - remapped buttons 2/4/16
         rTrigger = new JoystickButton (rightJoystick, 1);
-        rTrigger.whileHeld(new LaunchLow());
+        rTrigger.whileHeld(new LaunchHigh());
         //right3 = new JoystickButton(rightJoystick, 3);
         //right3.whileHeld(new LiftFangs());
         left3 = new JoystickButton(leftJoystick, 3);
